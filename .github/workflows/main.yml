@@ -2,11 +2,14 @@ name: Generate Snake SVG
 
 on:
   schedule:
-    # Runs at 00:00 UTC every day
-    # You can adjust the schedule as needed
-    - cron: "0 0 * * *"
+    # Runs every hour
+    - cron: "0 * * * *"
   workflow_dispatch:
     # Allows manual triggering of the workflow from the GitHub UI
+  push:
+    # Runs once initially when the workflow file is pushed, and on subsequent pushes
+    branches:
+      - master # Or your main branch, e.g., main
 
 jobs:
   build:
@@ -18,7 +21,7 @@ jobs:
       # This action checks out your repository under $GITHUB_WORKSPACE,
       # so your workflow can access it.
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       # Step 2: Generate the Snake SVG animation
       # This action uses the Platane/snk action to create an SVG
