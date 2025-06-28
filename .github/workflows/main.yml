@@ -1,0 +1,45 @@
+name: Generate Snake SVG
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    # You can adjust the schedule as needed
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    # Allows manual triggering of the workflow from the GitHub UI
+
+jobs:
+  build:
+    name: Generate GitHub Snake SVG
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code
+      # This action checks out your repository under $GITHUB_WORKSPACE,
+      # so your workflow can access it.
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Generate the Snake SVG animation
+      # This action uses the Platane/snk action to create an SVG
+      # snake based on the GitHub activity of the repository owner.
+      - name: Generate Snake SVG
+        id: snake-svg-generator # A unique ID for this step
+        uses: Platane/snk@master
+        with:
+          github_user_name: ${{ github.repository_owner }} # Dynamically gets the GitHub username
+          outputs: dist/snake.svg # Specifies the output path and filename for the SVG
+
+      # Step 3: Commit and push the generated SVG
+      # This step commits the new or updated snake.svg file to the repository.
+      # It's important for the SVG to be pushed back so it can be displayed
+      # (e.g., in a profile README).
+      - name: Commit and Push SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/snake.svg
+          git commit -m "Generate GitHub Snake SVG" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided token for pushing changes
