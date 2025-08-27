@@ -16,10 +16,12 @@ jobs:
     environment: 
       name: production
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Youtube Music - Random track from playlist
+        uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.isocalendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: NOT_NEEDED
           base: ""
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          plugin_music: yes
+          plugin_music_playlist: >-
+            https://music.youtube.com/playlist?list=PLohZUqpdwH_kXHCyLBbAcsRX3_inWjqal
+
