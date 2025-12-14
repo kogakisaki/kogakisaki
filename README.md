@@ -25,10 +25,10 @@
 ###
 
 <div align="center">
-  <a href="https://discord.com/users/1088679170990686238" target="_blank">
+  <a href="https://discord.gg/w4pE2uHm" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="discord logo"  />
   </a>
-  <a href="https://www.facebook.com/eien.is.here" target="_blank">
+  <a href="https://www.facebook.com/carlyle.katto.1210" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Facebook&logo=facebook&label=&color=1877F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="facebook logo"  />
   </a>
 </div>
@@ -37,7 +37,7 @@
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=kogakisaki&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=tokyonight&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
-  <img src="https://streak-stats.demolab.com?user=kogakisaki&locale=en&mode=daily&theme=tokyonight&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
+  <!-- <img src="https://streak-stats.demolab.com?user=kogakisaki&locale=en&mode=daily&theme=tokyonight&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  /> -->
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=kogakisaki&radius=16&theme=tokyo-night&area=true&order=5" height="300" alt="activity-graph graph"  />
   <img src="./metrics.plugin.reactions.svg" />
 </div>
